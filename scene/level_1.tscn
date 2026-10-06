@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://dt4vujmhmqnt0"]
+
+[ext_resource type="Script" uid="uid://bcaqccepo5qv8" path="res://src/main/kotlin/com/godot/game/Level1Screen.kt" id="1_x17xt"]
+[ext_resource type="PackedScene" uid="uid://bdwbphkqh0uet" path="res://material/player.tscn" id="2_rpurj"]
+[ext_resource type="PackedScene" uid="uid://biff6d1kthli2" path="res://material/coin.tscn" id="3_3flxk"]
+[ext_resource type="Environment" uid="uid://blsb0vsd3ivxq" path="res://resource/level_environment.tres" id="4_xesoj"]
+[ext_resource type="MeshLibrary" uid="uid://bebbrefv71eyw" path="res://resource/world_blocks.tres" id="5_53ndp"]
+[ext_resource type="PackedScene" uid="uid://c7segts0h4wa8" path="res://scene/hud.tscn" id="7_lsoxn"]
+[ext_resource type="PackedScene" uid="uid://del2atuehk1td" path="res://material/enemy.tscn" id="7_x17xt"]
+[ext_resource type="PackedScene" uid="uid://wbisiajx7rv6" path="res://material/movable_platform.tscn" id="8_x17xt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujqkb"]
+size = Vector3(300, 1, 300)
+
+[node name="Level1" type="Node3D" unique_id=464032035]
+script = ExtResource("1_x17xt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1192452483]
+transform = Transform3D(0.8660254, -0.4829629, 0.12940954, 0, 0.25881907, 0.9659258, -0.5, -0.83651626, 0.2241439, 0, 5, 5)
+light_color = Color(1, 1, 0.66999996, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=461578355]
+environment = ExtResource("4_xesoj")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=399500970]
+mesh_library = ExtResource("5_53ndp")
+cell_size = Vector3(10, 1, 10)
+collision_layer = 2
+collision_mask = 13
+data = {
+"cells": PackedInt32Array(-2, 0, 3, -2, 65534, 1441795, -65536, 65534, 655363, -65536, 0, 1048579, -1, 0, 2, -2, 65535, 655360, -1, 65534, 1048576, -65536, 65535, 1048578, -1, 65535, 1048576, 65535, 65533, 655364, 65535, 65531, 1048578, 65535, 65530, 655363, -1, 65533, 0, 65535, 65535, 0, -1, 65532, 655360, 65535, 65532, 655366, -9, 65535, 655362, -9, 0, 1048579, -10, 0, 3, -10, 65535, 1441795, 65534, 65531, 3, 65534, 65530, 1441794, 1703934, 65531, 3, 1703934, 65530, 1441794, 1703935, 65530, 655363, 1703935, 65531, 1048579)
+}
+metadata/_editor_floor_ = Vector3(0, 25, 0)
+
+[node name="HUD" parent="." unique_id=1366235220 instance=ExtResource("7_lsoxn")]
+
+[node name="FallZone" type="Area3D" parent="." unique_id=1466612203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallZone" unique_id=1183486809]
+shape = SubResource("BoxShape3D_ujqkb")
+
+[node name="Coins" type="Node3D" parent="." unique_id=230897031]
+
+[node name="Coin1" parent="Coins" unique_id=1012979580 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
+hud = NodePath("../../HUD")
+
+[node name="Coin2" parent="Coins" unique_id=652073532 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4)
+hud = NodePath("../../HUD")
+
+[node name="Coin3" parent="Coins" unique_id=1602982725 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -7)
+hud = NodePath("../../HUD")
+
+[node name="Coin4" parent="Coins" unique_id=1695874475 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -10)
+hud = NodePath("../../HUD")
+
+[node name="Coin5" parent="Coins" unique_id=785854458 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -13)
+hud = NodePath("../../HUD")
+
+[node name="Coin6" parent="Coins" unique_id=24593381 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, -46)
+hud = NodePath("../../HUD")
+
+[node name="Coin7" parent="Coins" unique_id=251069572 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, -55)
+hud = NodePath("../../HUD")
+
+[node name="Coin8" parent="Coins" unique_id=687763405 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -48)
+hud = NodePath("../../HUD")
+
+[node name="Coin9" parent="Coins" unique_id=1180968996 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1, -5)
+hud = NodePath("../../HUD")
+
+[node name="Coin10" parent="Coins" unique_id=311300250 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86, 1, 7)
+hud = NodePath("../../HUD")
+
+[node name="Coin11" parent="Coins" unique_id=1431393306 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1, 4)
+hud = NodePath("../../HUD")
+
+[node name="Coin12" parent="Coins" unique_id=581835570 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 27, -44)
+hud = NodePath("../../HUD")
+
+[node name="Coin13" parent="Coins" unique_id=1853668553 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 27, -54)
+hud = NodePath("../../HUD")
+
+[node name="Coin14" parent="Coins" unique_id=1762889734 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 27, -51)
+hud = NodePath("../../HUD")
+
+[node name="Coin15" parent="Coins" unique_id=823952860 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 27, -44)
+hud = NodePath("../../HUD")
+
+[node name="Coin16" parent="Coins" unique_id=61637272 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 27, -55)
+hud = NodePath("../../HUD")
+
+[node name="Coin17" parent="Coins" unique_id=1381489128 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, -13)
+hud = NodePath("../../HUD")
+
+[node name="Coin18" parent="Coins" unique_id=1016599233 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, -1)
+hud = NodePath("../../HUD")
+
+[node name="Coin19" parent="Coins" unique_id=1647144236 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 5)
+hud = NodePath("../../HUD")
+
+[node name="Coin20" parent="Coins" unique_id=368688527 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 5)
+hud = NodePath("../../HUD")
+
+[node name="Coin21" parent="Coins" unique_id=1618641328 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 7)
+hud = NodePath("../../HUD")
+
+[node name="Coin22" parent="Coins" unique_id=1830424869 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -3)
+hud = NodePath("../../HUD")
+
+[node name="Coin23" parent="Coins" unique_id=999966168 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -12)
+hud = NodePath("../../HUD")
+
+[node name="Coin24" parent="Coins" unique_id=303544764 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -34)
+hud = NodePath("../../HUD")
+
+[node name="Coin25" parent="Coins" unique_id=1938102189 node_paths=PackedStringArray("hud") instance=ExtResource("3_3flxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -23)
+hud = NodePath("../../HUD")
+
+[node name="Enemies" type="Node3D" parent="." unique_id=2106033861]
+
+[node name="Enemy1" parent="Enemies" unique_id=665310072 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 1, -4)
+direction = Vector3(1, 0, 0)
+speed = 0.4
+
+[node name="Enemy2" parent="Enemies" unique_id=1184093822 instance=ExtResource("7_x17xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 3)
+direction = Vector3(0, 0, 1)
+speed = 4.0
+
+[node name="Enemy3" parent="Enemies" unique_id=160090105 instance=ExtResource("7_x17xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -32)
+direction = Vector3(0, 0, 1)
+
+[node name="Enemy4" parent="Enemies" unique_id=1924707795 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 2, -52)
+direction = Vector3(1, 0, 0)
+speed = 3.0
+
+[node name="Enemy5" parent="Enemies" unique_id=967529010 instance=ExtResource("7_x17xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1, -1)
+direction = Vector3(0, 0, 1)
+speed = 5.0
+
+[node name="Enemy6" parent="Enemies" unique_id=902335002 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 1, -13)
+direction = Vector3(1, 0, 0)
+speed = 4.0
+
+[node name="Enemy7" parent="Enemies" unique_id=774191634 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13, 2, -5)
+direction = Vector3(0, 0, -1)
+speed = 1.0
+
+[node name="Enemy8" parent="Enemies" unique_id=792038604 instance=ExtResource("7_x17xt")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3, 2, -5)
+direction = Vector3(-1, 0, 0)
+turn_around_at_edges = true
+speed = 0.5
+
+[node name="Enemy9" parent="Enemies" unique_id=125844658 instance=ExtResource("7_x17xt")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12, 27, -50)
+direction = Vector3(-1, 0, 0)
+speed = 5.0
+
+[node name="Enemy10" parent="Enemies" unique_id=783829798 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7, 27, -43)
+direction = Vector3(0, 0, -1)
+speed = 3.0
+
+[node name="Enemy11" parent="Enemies" unique_id=594407404 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 1, 6)
+direction = Vector3(1, 0, 0)
+speed = 4.0
+
+[node name="Enemy12" parent="Enemies" unique_id=1200731814 instance=ExtResource("7_x17xt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15, 2, -47)
+direction = Vector3(1, 0, 0)
+speed = 4.0
+
+[node name="Enemy13" parent="Enemies" unique_id=1327591099 instance=ExtResource("7_x17xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1, 1)
+direction = Vector3(0, 0, 1)
+
+[node name="Platforms" type="Node3D" parent="." unique_id=831056806]
+
+[node name="MovablePlatform1" parent="Platforms" unique_id=1161711021 instance=ExtResource("8_x17xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.5, -5)
+a = Vector3(-25, -0.5, -5)
+b = Vector3(-75, -0.5, -5)
+
+[node name="MovablePlatform2" parent="Platforms" unique_id=673002045 instance=ExtResource("8_x17xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -65)
+a = Vector3(-15, 0.5, -65)
+b = Vector3(-15, 25.5, -65)
+
+[node name="Player" parent="." unique_id=1187408137 instance=ExtResource("2_rpurj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[connection signal="body_entered" from="FallZone" to="Player" method="on_fall_zone_body_entered"]

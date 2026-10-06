@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://befqym0it54qr"]
+
+[ext_resource type="AudioStream" uid="uid://b5cdic03i3o2p" path="res://assets/sound/enemy-lose.ogg" id="1_6i8hr"]
+[ext_resource type="Script" uid="uid://mn7cptxa8nhm" path="res://src/main/kotlin/com/godot/game/SoundManager.kt" id="1_mrnsi"]
+[ext_resource type="AudioStream" uid="uid://b8musxqglda7g" path="res://assets/sound/coin-collect.ogg" id="3_5c1a0"]
+[ext_resource type="AudioStream" uid="uid://ba1kxdp8a4rw4" path="res://assets/sound/fall-gameover.ogg" id="4_qbflo"]
+[ext_resource type="AudioStream" uid="uid://cot1nw30g1cah" path="res://assets/sound/button-maximize.ogg" id="5_wh1rs"]
+[ext_resource type="AudioStream" uid="uid://cntyw5g5d5uam" path="res://assets/music/Menu-RetroMystic.ogg" id="6_wh1rs"]
+[ext_resource type="AudioStream" uid="uid://cw3fn31vk2llo" path="res://assets/music/Level-RetroBeat.ogg" id="7_47vek"]
+
+[node name="SoundManager" type="Control" unique_id=882737765]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrnsi")
+
+[node name="SoundButtonPressed" type="AudioStreamPlayer" parent="." unique_id=1175045003]
+stream = ExtResource("5_wh1rs")
+volume_db = -15.0
+
+[node name="SoundEnemyLose" type="AudioStreamPlayer" parent="." unique_id=1520020787]
+stream = ExtResource("1_6i8hr")
+volume_db = -20.0
+
+[node name="SoundCoinCollect" type="AudioStreamPlayer" parent="." unique_id=1345771084]
+stream = ExtResource("3_5c1a0")
+volume_db = -15.0
+
+[node name="SoundFallGameOver" type="AudioStreamPlayer" parent="." unique_id=1857857846]
+stream = ExtResource("4_qbflo")
+volume_db = -20.0
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=754668269]
+stream = ExtResource("6_wh1rs")
+volume_db = -10.0
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="." unique_id=314689570]
+stream = ExtResource("7_47vek")
+volume_db = -15.0

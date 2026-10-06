@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://d0c3mdj2j44d8"]
+
+[ext_resource type="Script" uid="uid://dutq5bbp504si" path="res://src/main/kotlin/com/godot/game/GameOverScreen.kt" id="1_7ufge"]
+[ext_resource type="Texture2D" uid="uid://cr2oxv2k6khw1" path="res://assets/image/background_over.jpg" id="2_7ufge"]
+[ext_resource type="Texture2D" uid="uid://bjxq7j1pxc8h1" path="res://assets/image/image-screen-gameover.png" id="3_5sfvh"]
+[ext_resource type="FontFile" uid="uid://cn3n4a4iqp5r3" path="res://assets/font/ScienceGothic_Condensed-SemiBold.ttf" id="4_l4juv"]
+[ext_resource type="FontFile" uid="uid://b46cwsqfxl6dr" path="res://assets/font/Oxanium-ExtraBold.ttf" id="5_kpcds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4d81"]
+bg_color = Color(0.18384078, 0.21505144, 0.941609, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v00j7"]
+bg_color = Color(0.09068958, 0.082241885, 0.581567, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcx7q"]
+bg_color = Color(0.51167244, 0.62894064, 0.9968557, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkxeu"]
+bg_color = Color(0.09068958, 0.082241885, 0.581567, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ih6k"]
+bg_color = Color(0.18431373, 0.21568628, 0.9411765, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ufge"]
+bg_color = Color(0.48373073, 0.3853166, 9.62615e-08, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sfvh"]
+bg_color = Color(0.28508642, 0.22303808, 1.92523e-07, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaeg8"]
+bg_color = Color(0.7611107, 0.61221236, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpcds"]
+bg_color = Color(0.41322362, 0.32588485, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4juv"]
+bg_color = Color(0.7607843, 0.6117647, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="GameOverScreen" type="Control" unique_id=2003793779]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_7ufge")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=474326732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7ufge")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1541573284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5sfvh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="." unique_id=357335399]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -346.5
+offset_top = 40.0
+offset_right = 346.5
+offset_bottom = 188.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7586619, 0.8093081, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.1292961, 0.00017904639, 0.5999358, 1)
+theme_override_colors/font_outline_color = Color(0.5759438, 0.65391064, 1, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_l4juv")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=340820916]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -184.0
+offset_right = -48.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.966, 0.88, 1)
+theme_override_colors/font_focus_color = Color(1, 0.9343573, 0.7736378, 1)
+theme_override_colors/font_pressed_color = Color(0.9999997, 0.8738572, 0.56310177, 1)
+theme_override_colors/font_hover_color = Color(1, 0.93333334, 0.77254903, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99999934, 0.85809624, 0.5045212, 1)
+theme_override_fonts/font = ExtResource("5_kpcds")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4d81")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v00j7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcx7q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rkxeu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0ih6k")
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="." unique_id=665837906]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -104.0
+offset_right = -48.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.63064855, 0.92968166, 1, 1)
+theme_override_colors/font_focus_color = Color(4.042983e-06, 0.9358838, 0.95083946, 1)
+theme_override_colors/font_pressed_color = Color(5.0055983e-06, 0.8246176, 0.95270187, 1)
+theme_override_colors/font_hover_color = Color(0.57079655, 0.91898674, 0.99999994, 1)
+theme_override_colors/font_hover_pressed_color = Color(5.0055983e-06, 0.83393055, 0.96337086, 1)
+theme_override_fonts/font = ExtResource("5_kpcds")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ufge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5sfvh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaeg8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_kpcds")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l4juv")
+text = "MENU"
+
+[connection signal="pressed" from="Button" to="." method="on_play_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="on_menu_button_pressed"]

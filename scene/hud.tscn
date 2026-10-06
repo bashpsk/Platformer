@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c7segts0h4wa8"]
+
+[ext_resource type="Texture2D" uid="uid://c1k463b4afqxv" path="res://assets/image/CoinPreview.png" id="1_s3k51"]
+[ext_resource type="FontFile" uid="uid://cn3n4a4iqp5r3" path="res://assets/font/ScienceGothic_Condensed-SemiBold.ttf" id="2_o8u2p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujqkb"]
+bg_color = Color(0, 0, 0, 0.4862745)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="HUD" type="CanvasLayer" unique_id=1366235220]
+
+[node name="Panel" type="Panel" parent="." unique_id=61076136]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 86.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujqkb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=858943624]
+offset_left = 43.0
+offset_top = 39.0
+offset_right = 83.0
+offset_bottom = 79.0
+texture = ExtResource("1_s3k51")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinLabel" type="Label" parent="." unique_id=1697456640]
+offset_left = 90.0
+offset_top = 24.0
+offset_right = 154.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.022285692, 0.77101153, 0.48421133, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.47058824)
+theme_override_colors/font_outline_color = Color(0.17354125, 0.33401904, 0.21524635, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o8u2p")
+theme_override_font_sizes/font_size = 45
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
